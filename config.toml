@@ -1,0 +1,267 @@
+theme = "onedark"
+
+[editor]
+
+# 相对行号
+line-number = "relative"
+
+# 使用 zsh 执行外部命令
+shell = ["zsh", "-c"]
+
+# 高亮当前行
+cursorline = true
+
+# 禁止换行连续注释
+continue-comments = false
+
+# 右边栏显示哪些信息
+gutters = [
+  "diagnostics",
+  "spacer",
+  "line-numbers",
+  "spacer",
+  "diff",
+]
+
+# 开启自动补全
+auto-completion = true
+
+# 启用路径补全
+path-completion = true
+
+# 自动格式化文件
+auto-format = true
+
+# 自动补全弹出的延迟时间。
+completion-timeout = 250
+
+# 立即插入 completion 预览的内容
+preview-completion-insert = true
+
+# 补全触发的最小字符数。
+completion-trigger-len = 1
+
+# completion 是否替换整个单词。
+completion-replace = false
+
+# 是否显示信息框。
+# info box 通常用于显示:
+# LSP 信息
+# hover 信息
+# 类型信息
+# 文档说明
+# 参数提示等
+auto-info = true
+
+# 显示 24-bit 真色彩
+true-color = true
+
+# 是否强制启用 undercurl。
+undercurl = false
+
+# 在指定列显示垂直标尺。
+# 表示在第 20 列和第 40 列显示标尺。
+# rulers = [20, 40]
+rulers = []
+
+# 顶部显示 Buffer Line
+# "always": 始终显示
+# "never": 从不显示
+# "multiple": 只有打开多个 buffer 时才显示
+bufferline = "always"
+
+# 根据模式改变状态栏颜色
+color-modes = true
+
+# 文本最大宽度,以 80 列作为文本宽度
+text-width = 80
+
+# 指定相对于 workspace root 的目录
+# 将这些目录也视为 LSP root
+# 例如：
+# workspace-lsp-roots = ["src", "packages"]
+# 注意：
+# 官方说明该选项应该只写在项目自己的
+# .helix/config.toml 中，而不是全局配置。
+# 因此这里默认不配置。
+# workspace-lsp-roots = []
+
+# 新建文档使用的默认行结束符。
+# 可选值：
+# "native": 使用当前操作系统默认格式
+# "lf": Unix / Linux / macOS 常用
+# "crlf": Windows 常用
+default-line-ending = "native"
+
+# 保存文件时，如果文件最后没有换行符，是否自动添加一个。
+# true: 自动添加最终换行符
+# false: 保持原样。
+insert-final-newline = true
+
+# 是否使用 atomic save（原子保存）
+# true: Helix 使用更安全的原子方式写入文件，可以降低编辑器写文件过程中被中断导致数据损坏的风险。
+# false: 使用普通写入方式。
+# 注意: 某些文件监听器、热加载程序可能不喜欢 atomic save。
+atomic-save = true
+
+# 是否删除文件最后多余的换行符。
+ # false: 保留最后一个换行符之后的额外空行。
+# true: 删除最后一个换行符之后多余的换行。
+trim-final-newlines = false
+
+# 保存文件时是否自动删除行尾空格。
+trim-trailing-whitespace = false
+
+# 是否给 popup / menu 绘制边框。
+# "popup": popup 使用边框
+# "menu": menu 使用边框
+# "all": popup 和 menu都使用边框
+# "none": 不显示边框
+popup-border = "none"
+
+# 新插入行时使用什么方式计算缩进。
+# "simple": 简单缩进。直接参考上一行的缩进级别。
+# "tree-sitter": 根据 Tree-sitter 语法树计算缩进。
+# "hybrid": 综合 simple 和 tree-sitter。
+indent-heuristic = "hybrid"
+
+# 在 jump 操作中生成标签时使用的字符集合。
+# 使用这些字符生成跳转标签
+jump-label-alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+# 是否在代码行末尾显示 diagnostics。
+# 如果希望显示，可以根据 inline-diagnostics 的配置进一步设置。
+end-of-line-diagnostics = "disable"
+
+# 使用什么方式访问系统剪贴板。
+# "pasteboard": macOS 剪贴板
+# "wayland": Wayland
+# "x-clip": xclip
+# "x-sel": xsel
+# "win-32-yank": Windows
+# "termux":Termux
+# "tmux": tmux
+# "windows": Windows 剪贴板
+# "termcode": 使用终端转义序列（例如 OSC 52）
+# "none": 禁用系统剪贴板
+# 会自动检测，因此不设置。
+clipboard-provider = "pasteboard"
+
+
+# 禁用鼠标
+mouse = true
+
+# 光标上下边距
+scrolloff = 1
+
+# 鼠标中建粘贴
+middle-click-paste = false
+
+# 自动补全成对符号
+# auto-pairs = true
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+
+
+[editor.statusline]
+
+# 左侧：编辑状态 + 文件
+left = [
+    "mode",
+    "spinner",
+    "file-base-name",
+    "diagnostics",
+    "file-modification-indicator",
+    "read-only-indicator",
+    "version-control",
+]
+
+# 中间：Git 分支 + 文件类型
+center = [
+]
+
+# 右侧：诊断 + 多选区 + 光标位置 + 文件信息
+right = [
+    "file-encoding",
+    "file-indent-style",
+    "file-line-ending",
+    "file-type",
+]
+
+# 元素之间的分隔符
+separator = "Luis"
+
+# 模式名称
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+# 当前文件的诊断
+diagnostics = ["warning", "error"]
+
+# 整个 Workspace 的诊断
+workspace-diagnostics = ["warning", "error"]
+
+[editor.lsp]
+enable = true
+
+# 在状态栏显示 lsp 发送的信息
+display-messages = true
+
+# 在状态栏显示 lsp 加载进度
+display-progress-messages = true
+
+[editor.indent-guides]
+render = true
+character = "⸽" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+
+[keys.insert]
+C-j = "open_below"
+C-k = "open_above"
+j = { j = "normal_mode" }
+
+[keys.normal]
+"ret" = ["open_below", "normal_mode"]
+"tab" = "command_mode"
+L = "goto_line_end"
+H = "goto_line_start"
+G = "goto_last_line"
+"C-\\" = "toggle_comments"
+y = { y = [ "extend_line", "yank_to_clipboard" ]}
+Y = "yank_main_selection_to_clipboard"
+d = { d = ["extend_line", "delete_selection"]}
+x = "delete_selection"
+p = "paste_clipboard_after"
+V = "@x"
+
+[keys.normal.space]
+"\\" = "toggle_block_comments"
+"e" = "file_picker_in_current_directory"
+# └─ 切换到下一个 buffer
+tab = "goto_next_buffer"
+# Shift + Tab
+# └─ 切换到上一个 buffer
+"S-tab" = "goto_previous_buffer"
+
+[keys.select]
+"C-\\" = "toggle_comments"
+"space" = { "\\" = ["toggle_block_comments"]}
+L = "goto_line_end"
+H = "goto_line_start"
+p = "paste_clipboard_after"
+y = "yank_to_clipboard"
